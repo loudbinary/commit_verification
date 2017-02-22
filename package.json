@@ -1,0 +1,18 @@
+{
+  "name": "commit_verification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.25.1",
+    "jira-client": "^5.0.1",
+    "reverse-string": "0.0.6",
+    "simple-git": "^1.66.0",
+    "tmp": "0.0.31"
+  }
+}

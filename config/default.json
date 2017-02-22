@@ -1,0 +1,49 @@
+{
+  "jira": {
+    "connection_info": {
+      "protocol": "https",
+      "host": "loudbinary2.atlassian.net",
+      "username": "admin",
+      "password": "nopassword",
+      "apiVersion": "2",
+      "strictSSL": false
+    },
+    "new_issue_details": {
+      "fields": {
+        "project": {
+          "id": "10000"
+        },
+        "summary": "Missing JIRA_Key in comit message",
+        "issuetype": {
+          "id": "10103"
+        },
+        "assignee": {
+          "name": "admin"
+        },
+        "reporter": {
+          "name": "admin"
+        },
+        "labels": [
+          "bug"
+        ]
+      }
+    }
+  },
+  "repositories": [
+      {
+        "name": "com.dartfleet.web",
+        "repo": "https://charles_russell@bitbucket.org/webteks/com.dartfleet.web.git",
+        "branch": "develop"
+      },
+      {
+        "name": "com.dartfleet.modbile.ios",
+        "repo": "https://charles_russell@bitbucket.org/webteks/com.dartfleet.mobile.ios.git",
+        "branch": "develop"
+      },
+      {
+        "name": "com.dartfleet.modbile.android",
+        "repo": "https://charles_russell@bitbucket.org/webteks/com.dartfleet.mobile.android.git",
+        "branch": "develop"
+      }
+    ]
+}
