@@ -38,7 +38,7 @@ function getJiraIssue(s){
  */
 function createIssue(repoInfo,commit_info,callback){
     let issue_info = config.jira.new_issue_details
-    issue_info.fields.description = "This commit_sha is missing a JIRA_Key within the commit message.  Please correct by updating";
+    issue_info.fields.description = "This commit_sha is missing a JIRA_Key within the commit message.  Please correct by updating"
     issue_info.fields.description += "\r\nCommit Sha: " + commit_info.hash
     issue_info.fields.description += "\r\nAuthor Name: " + commit_info.author_name
     issue_info.fields.description += "\r\nAuthor Email: " + commit_info.author_email
@@ -48,7 +48,7 @@ function createIssue(repoInfo,commit_info,callback){
         callback(null,issue)
     }).catch(function(err) {
         callback(err)
-    });
+    })
 }
 
 /**
@@ -60,7 +60,7 @@ function createIssue(repoInfo,commit_info,callback){
               "repo": "https://charles_russell@bitbucket.org/webteks/com.dartfleet.web.git",
               "branch": "develop"
             }
- * @param callback(err,results);
+ * @param callback(err,results)
  */
 function processRepo(repoInfo,callback){
     git.clone(repoInfo.repo,path.join(tmpobj.name,repoInfo.name))
@@ -69,7 +69,7 @@ function processRepo(repoInfo,callback){
         .log({'--since': "24 hours ago"}, function(err,log){
         log.all.forEach(function(item){
             let issues = getJiraIssue(item.message)
-            if (issues.length != 0) {
+            if (issues.length == 0) {
                 createIssue(repoInfo,item,function(err,results){
                     if (err){
                         callback(err)
@@ -91,14 +91,14 @@ function cloneAllAndProcess(){
     config.repositories.forEach(function(item){
         processRepo(item,function(err){
             if(err){
-                console.log(err);
+                console.log(err)
             } else {
-                console.log('Completed processing');
-                process.exit();
+                console.log('Completed processing')
+                process.exit()
             }
 
         })
     })
 }
 
-cloneAllAndProcess();
+cloneAllAndProcess()
